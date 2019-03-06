@@ -1,0 +1,39 @@
+<h4 style="text-align: center">{{titulo}}</h4>
+
+
+<form style="margin: auto" #formCrearProducto="ngForm" (ngSubmit)="onSubmit()" class="col-lg-6" id="form-crearProducto">
+    <div class="form-group">
+        <label id="lblNombre">Nombre
+                <span *ngIf="!nombre.valid && nombre.touched" class="alert-danger">El nombre es obligatorio</span>
+        </label>
+        <input type="text" class="form-control" #nombre="ngModel" [(ngModel)]="producto.nombre" name="inputNombre" placeholder="Introduce nombre de producto" required/>
+
+    </div>
+    <div class="form-group">
+        <label id="lblDescripcion">Descripción
+            <span *ngIf="!descripcion.valid && descripcion.touched" class="alert-danger">La descripción es obligatoria</span>
+        </label>
+        <textarea type="input" class=" form-control" #descripcion="ngModel" [(ngModel)]="producto.descripcion" name="descripcion" placeholder="Introduce descripción del producto " required></textarea>
+
+
+    </div>
+    <div class="form-group ">
+        <label id="lblPrecio ">Precio 
+                <span *ngIf="!precio.valid && precio.touched" class="alert-danger">El precio no es correcto</span>
+        </label>
+        <input type="text" class="form-control " #precio="ngModel" [(ngModel)]="producto.precio" name="precio" placeholder="Introduce el precio del producto" required pattern="[0-9]+" />
+
+
+    </div>
+    <div class="form-group ">
+        <label id="lblImagen ">Imagen</label>
+        <input type="file" class="form-control" (change)="fileChangeEvent($event)" />
+
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary" [disabled]="!formCrearProducto.form.valid">Crear Producto</button>
+    <a style="color: white" onclick="$('#form-crearProducto')[0].reset();" class="btn btn-primary" style="margin-left: 10px">Limpiar Campos</a>
+</form>
+
+
+<a routerLink="/productos" id="btnVolver" class="btn btn-g btn-primary">Volver a productos</a>

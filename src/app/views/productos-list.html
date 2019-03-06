@@ -1,0 +1,44 @@
+<h4 style="text-align: center">{{titulo}}</h4>
+
+
+<div *ngIf="!productos">Cargando productos ...</div>
+<br>
+
+<div class="col-lg-10 offset-lg-1" *ngIf="productos">
+    <table class="table table-dark borderRad">
+        <thead>
+            <tr>
+                <th scope="col">Imagen</th>
+                <th scope="col">id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let producto of productos">
+                <td *ngIf="producto.imagen" style="width:10%">
+                    <img class="imgProduct" src="http://localhost/curso-angular4-backend/uploads/{{producto.imagen}}" />
+                </td>
+                <td *ngIf="!producto.imagen"> <img class="imgProduct" src="https://www.freeiconspng.com/uploads/no-image-icon-15.png" /></td>
+                <td>{{producto.id}}</td>
+                <td>{{producto.nombre}}</td>
+                <td>{{producto.descripcion}}</td>
+                <td>{{producto.precio}}</td>
+                <td style="width: 100px">
+                    <div>
+                        <a class="btn botonera btn-md btn-primary" routerLink="/producto/{{producto.id}}">Ver</a>
+                        <a class="btn botonera btn-md btn-primary" routerLink="/producto-edit/{{producto.id}}">Editar</a>
+                        <a class="btn botonera btn-md btn-primary" (click)="borrarConfirm(producto.id)">Eliminar</a>
+                        <div class="seguro" *ngIf="confirmado==producto.id">
+                            <p style="color:white; margin-top: 10px">¿Estás seguro de querer borrar este producto?</p>
+                            <a style="display: inline" class="btn botonera btn-md btn-danger" (click)="onDeleteProducto(producto.id)">Eliminar</a>
+                            <a style="display: inline; margin-left: 10px" class="btn botonera btn-md btn-success" (click)="cancelarConfirm()">Cancelar</a>
+
+                        </div>
+                    </div>
+                </td>
+        </tbody>
+    </table>
+</div>
