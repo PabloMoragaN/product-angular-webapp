@@ -1,0 +1,27 @@
+<h4 style="text-align: center">{{titulo}}</h4>
+
+<div *ngIf="!producto">
+    <p>Cargando Producto</p>
+</div>
+
+<form style="margin:auto" *ngIf="producto" #formDetalleProducto class="col-lg-6">
+    <div class="form-group">
+        <label id="lblPrecio">Nombre </label>
+        <label type="text" class="form-control">{{producto.nombre}}</label>
+    </div>
+    <div class="form-group">
+        <label id="lblDescripcion">Descripción</label>
+        <textarea readonly type="text" class=" form-control">{{producto.descripcion}}</textarea>
+    </div>
+    <div class="form-group">
+        <label id="lblPrecio">Precio </label>
+        <label type="text" class="form-control">{{producto.precio}}</label>
+    </div>
+    <div class="form-group">
+        <label id="lblImagen ">Imagen</label>
+        <label *ngIf="producto.imagen" style="width:10%; display: inline-block">
+                <img class="imgProduct" src="http://localhost/curso-angular4-backend/uploads/{{producto.imagen}}"/></label>
+    </div>
+</form>
+
+<a routerLink="/productos" id="btnVolver" class="btn btn-g btn-primary">Volver a productos</a>
