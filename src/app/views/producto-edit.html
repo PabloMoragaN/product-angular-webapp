@@ -26,15 +26,20 @@
 
 
     </div>
-    <div class="form-group" style="display: inline">
+    <div class="form-group" style="float: left">
         <label id="lblImagen ">Imagen</label>
+        <input type="file" class="form-control" (change)="fileChangeEvent($event)" />
+    </div>
+
+    <div class="form-group" style="float: right; margin-right: 200px">
         <img *ngIf="!hideImg && producto.imagen" style="width: 100px" src="http://localhost/curso-angular4-backend/uploads/{{producto.imagen}}" />
-        <input type="file" class="form-control col-lg-6" (change)="fileChangeEvent($event)" />
     </div>
 
     <br>
-    <button type="submit" class="btn btn-primary" [disabled]="!formCrearProducto.form.valid">Editar Producto</button>
-    <a onclick="$('#form-crearProducto')[0].reset();" (click)="hideImage()" class="btn btn-primary" style="margin-left: 10px">Limpiar Campos</a>
+    <div class="form-group" style="margin-top: 100px">
+        <button type="submit" class="btn btn-primary" [disabled]="!formCrearProducto.form.valid">Editar Producto</button>
+        <a onclick="$('#form-crearProducto')[0].reset();" (click)="hideImage()" class="btn btn-primary" style="margin-left: 10px">Limpiar Campos</a>
+    </div>
 </form>
 
 <a routerLink="/productos" id="btnVolver" class="btn btn-g btn-primary">Volver a productos</a>
