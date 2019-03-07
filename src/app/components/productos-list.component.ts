@@ -8,7 +8,8 @@ import { Producto } from '../models/producto';
 
     selector: 'productos-list',
     templateUrl: '../views/productos-list.html',
-    providers: [ProductoService]
+    providers: [ProductoService],
+    styleUrls: ['../../assets/productos-list.css'],
 })
 
 export class ProductosListComponent {
