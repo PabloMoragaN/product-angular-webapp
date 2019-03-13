@@ -197,6 +197,14 @@ SIDEBAR
     border-radius: 7px;
 }
 
+.borderWhole {
+    border-top: solid 1px #ffffff;
+    border-bottom: solid 1px #ffffff;
+    border-right: solid 1px #ffffff;
+    border-left: solid 1px #ffffff;
+    border-radius: 7px;
+}
+
 .borderBotLink {
     border-bottom: solid 1px #ffffff;
 }
