@@ -87,6 +87,10 @@ SIDEBAR
 *
 */
 
+#sidebar_toggle {
+    position: bottom;
+}
+
 
 /* Toggle Styles */
 
