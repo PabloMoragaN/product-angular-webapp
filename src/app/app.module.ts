@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 
+
 //Componentes
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home.component';
@@ -18,6 +19,8 @@ import { ProductoDetailComponent } from './components/producto-detail.component'
 import { ProductoEditComponent } from './components/producto-edit.component';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,7 @@ import { ProductoEditComponent } from './components/producto-edit.component';
     ProductosListComponent,
     ProductoAddComponent,
     ProductoDetailComponent,
-    ProductoEditComponent
+    ProductoEditComponent,
   ],
   imports: [
     routing,
@@ -34,7 +37,9 @@ import { ProductoEditComponent } from './components/producto-edit.component';
     AppRoutingModule,
     HttpModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+
+
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

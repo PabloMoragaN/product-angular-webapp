@@ -15,7 +15,7 @@ APP.COMPONENT
 }
 
 #header {
-    background: #E03137;
+    background: rgb(22, 115, 253);
     color: white;
     margin: 0px;
     height: 90px;
@@ -40,13 +40,15 @@ APP.COMPONENT
 
 #nav div li:hover {
     text-decoration: none;
-    background: #E03137;
+    background: rgb(22, 115, 253);
+    border-radius: 7px;
 }
 
 .activado {
     text-decoration: none !important;
-    background: #E03137 !important;
+    background: rgb(22, 115, 253) !important;
     border: 2px solid grey !important;
+    border-radius: 7px;
 }
 
 #footer {
@@ -183,6 +185,12 @@ SIDEBAR
 
 .borderTopLink {
     border-top: solid 1px #ffffff;
+}
+
+.borderTopBottom {
+    border-top: solid 1px #ffffff;
+    border-bottom: solid 1px #ffffff;
+    border-radius: 7px;
 }
 
 .borderBotLink {

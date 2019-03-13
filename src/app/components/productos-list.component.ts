@@ -12,6 +12,7 @@ import { Producto } from '../models/producto';
     styleUrls: ['../../assets/productos-list.css'],
 })
 
+
 export class ProductosListComponent {
     public titulo: string;
     public productos:Producto[];
